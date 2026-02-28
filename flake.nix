@@ -48,11 +48,16 @@
           }:
           {
             # Pre-commit-hooks
-            pre-commit.settings.hooks = {
-              nixfmt.enable = true;
-              statix.enable = true;
-              clippy.enable = true;
-              rustfmt.enable = true;
+            pre-commit.settings = {
+              settings = {
+                rust.check.cargoDeps = pkgs.rustPlatform.importCargoLock { lockFile = ./Cargo.lock; };
+              };
+              hooks = {
+                nixfmt.enable = true;
+                statix.enable = true;
+                clippy.enable = true;
+                rustfmt.enable = true;
+              };
             };
 
             # Nix formatter
