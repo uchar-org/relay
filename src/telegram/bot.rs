@@ -1,4 +1,4 @@
-use crate::functions;
+use super::functions;
 use teloxide::{
     dispatching::{UpdateFilterExt, UpdateHandler},
     prelude::*,

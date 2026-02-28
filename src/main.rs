@@ -1,10 +1,10 @@
 use clap::Parser;
+use relay::clog;
+use relay::config::{Config, Field};
+use relay::telegram::bot::dispatch;
+use relay::{Cli, Commands};
 use std::error::Error;
 use teloxide::{prelude::*, update_listeners::webhooks};
-use tempbot::bot::dispatch;
-use tempbot::clog;
-use tempbot::config::{Config, Field};
-use tempbot::{Cli, Commands};
 
 /// # Welcome to our Telegram Bot Template
 ///

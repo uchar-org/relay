@@ -1,17 +1,16 @@
 #![allow(unused_variables)]
 #![allow(clippy::single_match)]
 
-pub mod bot;
 pub mod config;
-pub mod functions;
+pub mod telegram;
 
 use clap::{Parser, Subcommand};
 use std::path::PathBuf;
 
 /// Telegram bot made with Bleur Stack
 #[derive(Debug, Parser)]
-#[command(name = "bot")]
-#[command(about = "Telegram bot made with Bleur Stack", long_about = None)]
+#[command(name = "relay")]
+#[command(about = "Relay bridge between telegram and matrix", long_about = None)]
 pub struct Cli {
     #[command(subcommand)]
     pub command: Commands,

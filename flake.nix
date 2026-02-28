@@ -55,6 +55,9 @@
               rustfmt.enable = true;
             };
 
+            # Nix formatter
+            formatter = pkgs.nixfmt-tree;
+
             # Development environment
             devShells.default = import ./shell.nix self {
               inherit pkgs config;

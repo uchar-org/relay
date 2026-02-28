@@ -1,7 +1,8 @@
 pub mod help;
 pub mod start;
 
-use crate::bot::Command;
+use crate::telegram::bot::Command;
+use crate::telegram::functions;
 use std::error::Error;
 use teloxide::{prelude::*, types::*};
 
@@ -12,8 +13,8 @@ pub async fn commands(
     cmd: Command,
 ) -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     let _ = match cmd {
-        Command::Start => crate::functions::start::command(&bot, &msg).await,
-        Command::Help => crate::functions::help::command(&bot, &msg, &cmd).await,
+        Command::Start => functions::start::command(&bot, &msg).await,
+        Command::Help => functions::help::command(&bot, &msg, &cmd).await,
     };
 
     Ok(())

@@ -1,4 +1,4 @@
-use crate::bot::Command;
+use crate::telegram::bot::Command;
 use orzklv::telegram::{keyboard::Keyboard, topic::Topics};
 use teloxide::{
     payloads::SendMessageSetters,
